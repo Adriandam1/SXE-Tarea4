@@ -3,7 +3,8 @@
 
 ## 1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en **esta guía** sigue sus instrucciones para instalar **LAMP** en dicho contenedor.
 ```bash
-
+docker pull ubuntu:22.04
+docker images
 ```
 
 ## 2. Utiliza **esta guía** para instalar wordpress en el contenedor.
