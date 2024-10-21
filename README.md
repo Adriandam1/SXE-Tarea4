@@ -6,6 +6,9 @@
 docker pull ubuntu:22.04
 docker images
 ```
+![ubuntupull](https://github.com/user-attachments/assets/c37f6201-a958-4f0c-b847-e03b6c460b5c)
+
+
 
 ## 2. Utiliza **esta guía** para instalar wordpress en el contenedor.
 ```bash
