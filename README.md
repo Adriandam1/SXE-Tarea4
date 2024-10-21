@@ -1,5 +1,18 @@
 # Tarea 4
+La siguiente práctica es una lista de tareas que tenéis que hacer. 
 
+Crear un  fichero (nombre "Readme.md") con formato markdown en un repositorio en github para subir este fichero y hacer commits que indiquen lo realizado.
+
+En la respuesta pon el enlace a tu repositorio en github
+
+1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en esta guía sigue sus instrucciones para instalar LAMP en dicho contenedor.
+
+2. Utiliza esta guía para instalar wordpress en el contenedor.
+
+3. Comprueba que puedes acceder a wordpress. 
+
+
+OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta guía. Comprueba que puedes acceder.
 
 ## 1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en **esta guía** sigue sus instrucciones para instalar **LAMP** en dicho contenedor.
 ```bash
