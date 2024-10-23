@@ -5,14 +5,15 @@ Crear un  fichero (nombre "Readme.md") con formato markdown en un repositorio en
 
 En la respuesta pon el enlace a tu repositorio en github
 
-1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en esta guía sigue sus instrucciones para instalar LAMP en dicho contenedor.
+1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en esta [guía](https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-lamp-stack-apache-mariadb-php-on-ubuntu-22-04.html#Method_1_Install_LAMP_Stack_Manually_One_by_one) sigue sus instrucciones para instalar LAMP en dicho contenedor.
 
-2. Utiliza esta guía para instalar wordpress en el contenedor.
+2. Utiliza esta [guía](https://ubuntu.com/tutorials/install-and-configure-wordpress#1-overview) para instalar wordpress en el contenedor.
 
 3. Comprueba que puedes acceder a wordpress. 
 
 
-OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta guía. Comprueba que puedes acceder.
+OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta [guía](https://ubuntu.com/server/docs/how-to-install-and-configure-phpmyadmin). Comprueba que puedes acceder.
+
 
 ## 1. Utiliza la imagen de Ubuntu , tag 22 y apoyandote en **esta guía** sigue sus instrucciones para instalar **LAMP** en dicho contenedor.
 ```bash
