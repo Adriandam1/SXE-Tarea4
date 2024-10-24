@@ -82,7 +82,7 @@ Abrimos el navegador y accedemos a nuestra web
 ![test_lamp](https://github.com/user-attachments/assets/e1ba5c02-d835-4f8f-99ef-7ccd260c758b)
 
 
-Crear base de datos en contenedor mariadb
+#### Crear base de datos en contenedor mariadb
 service mariadb status
 service mariadb start
 accede a mariadb(pedira la password de root(en mi caso 'admin'))
@@ -117,6 +117,24 @@ apt install apache2 \
                  php-xml \
                  php-zip
 ```
+Instalar WordPress
+Create the installation directory and download the file from WordPress.org:
+Instalar curl:
+
+```bash
+mkdir -p /srv/www
+chown www-data: /srv/www
+curl https://wordpress.org/latest.tar.gz | tar zx -C /srv/www
+```
+Para el ultimo comando necesitas instalar curl:
+```bash
+apt-get install -y curl
+```
+curl localhost/info.php #comprobamos que funciona el info.php
+
+4. Configure Apache for WordPress
+
+
 ## 3. Comprueba que puedes acceder a wordpress. 
 ```bash
 
