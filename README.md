@@ -25,22 +25,25 @@ docker images
 ```bash
 docker container create -i -t --name cont_ubu1 -p  8080:80 ubuntu:22.04
 ```
-
-### Iniciar parar container: docker container start cont_ubu1
-
+Iniciamos y accedemos al contenedor con attack:
+```bash
+docker container start --attach -i cont_ubu1
+```
 
 ### Instalar LAMP en dicho contenedor:
 
 #### Instalar Apache
 ```bash
-sudo apt update
-sudo apt install -y apache2 apache2-utils
+apt update
+apt install -y apache2 apache2-utils
 ```
 Comprobamos que apache se instaló correctamente:
 ```bash
-sudo systemctl status apache2
+service apache2 start
+service apach2 status
 ```
-![apache instalado](https://github.com/user-attachments/assets/f12d9f05-9b04-4aee-a178-ad3b7c5a502f)
+![apache_en_contenedor](https://github.com/user-attachments/assets/a7f1f95e-1a06-4841-9250-c9f51f71ae3e)
+
 
 
 
