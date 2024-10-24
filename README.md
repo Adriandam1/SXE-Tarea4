@@ -132,7 +132,7 @@ apt-get install -y curl
 ```
 curl localhost/info.php #comprobamos que funciona el info.php
 
-4. Configure Apache for WordPress
+4. Configure Apache for WordPress.
 
 
 ## 3. Comprueba que puedes acceder a wordpress. 
