@@ -82,12 +82,40 @@ Abrimos el navegador y accedemos a nuestra web
 ![test_lamp](https://github.com/user-attachments/assets/e1ba5c02-d835-4f8f-99ef-7ccd260c758b)
 
 
+Crear base de datos en contenedor mariadb
+service mariadb status
+service mariadb start
+accede a mariadb(pedira la password de root(en mi caso 'admin'))
+
+mysql -u root -p
+create database mi_base_de_datos;
+show databases;
+
+![mi_base_de_datos](https://github.com/user-attachments/assets/06ac3b96-195a-4b93-b6d5-991e0d4b1bb1)
+
+
 
 
 
 ## 2. Utiliza **esta guía** para instalar wordpress en el contenedor.
-```bash
+Seguimos dentro del contenedor
+Instalamos las dependencias necesarias, lanzamos el siguiente comando que instalara muchos paquetes:
 
+```bash
+apt install apache2 \
+                 ghostscript \
+                 libapache2-mod-php \
+                 mysql-server \
+                 php \
+                 php-bcmath \
+                 php-curl \
+                 php-imagick \
+                 php-intl \
+                 php-json \
+                 php-mbstring \
+                 php-mysql \
+                 php-xml \
+                 php-zip
 ```
 ## 3. Comprueba que puedes acceder a wordpress. 
 ```bash
