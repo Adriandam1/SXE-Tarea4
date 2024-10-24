@@ -64,6 +64,20 @@ Tras configurar los valores nos aparece el mensaje: Thanks for using MariaDB!
 ![mariadb_en_contenedor](https://github.com/user-attachments/assets/5771fcbb-a68d-48e3-b050-ad222e0d9e8b)
 
 
+
+#### Crear base de datos en contenedor mariadb(para luego)
+service mariadb status
+service mariadb start
+accede a mariadb(pedira la password de root(en mi caso 'admin'))
+
+mysql -u root -p
+create database mi_base_de_datos;
+show databases;
+
+![mi_base_de_datos](https://github.com/user-attachments/assets/06ac3b96-195a-4b93-b6d5-991e0d4b1bb1)
+
+
+
 #### Instalar PHP
 ```bash
 apt install -y php php-mysql libapache2-mod-php
@@ -80,18 +94,6 @@ echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
 ```
 Abrimos el navegador y accedemos a nuestra web
 ![test_lamp](https://github.com/user-attachments/assets/e1ba5c02-d835-4f8f-99ef-7ccd260c758b)
-
-
-#### Crear base de datos en contenedor mariadb
-service mariadb status
-service mariadb start
-accede a mariadb(pedira la password de root(en mi caso 'admin'))
-
-mysql -u root -p
-create database mi_base_de_datos;
-show databases;
-
-![mi_base_de_datos](https://github.com/user-attachments/assets/06ac3b96-195a-4b93-b6d5-991e0d4b1bb1)
 
 
 
