@@ -25,6 +25,8 @@ docker images
 ```bash
 docker container create -i -t --name cont_ubu1 -p  8080:80 ubuntu:22.04
 ```
+// paramos el contenedor y luego lo iniciamos con attack para que nos abra la terminal y seguimos la guia
+// seguimos la guia con los comandos posterior
 Iniciamos y accedemos al contenedor con attack:
 ```bash
 docker container start --attach -i cont_ubu1
@@ -40,7 +42,7 @@ apt install -y apache2 apache2-utils
 Comprobamos que apache se instaló correctamente:
 ```bash
 service apache2 start
-service apach2 status
+service apache2 status
 ```
 ![apache_en_contenedor](https://github.com/user-attachments/assets/a7f1f95e-1a06-4841-9250-c9f51f71ae3e)
 
@@ -65,13 +67,20 @@ Tras configurar los valores nos aparece el mensaje: Thanks for using MariaDB!
 #### Instalar PHP
 ```bash
 apt install -y php php-mysql libapache2-mod-php
-systemctl restart apache2
 ```
 Comprobamos que php este instalado:
 ```bash
 php -v
 ```
 ![php_en_contenedor](https://github.com/user-attachments/assets/e53c4583-d855-4b78-a11f-52798ff4677a)
+
+#### Test LAMP Stack
+```bash
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+```
+Abrimos el navegador y accedemos a nuestra web
+![test_lamp](https://github.com/user-attachments/assets/e1ba5c02-d835-4f8f-99ef-7ccd260c758b)
+
 
 
 
