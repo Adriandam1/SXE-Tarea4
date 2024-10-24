@@ -49,27 +49,30 @@ service apach2 status
 
 #### Instalar MariaDB
 ```bash
-sudo apt install -y mariadb-server mariadb-client
-sudo mysql_secure_installation
+apt install -y mariadb-server mariadb-client
+```
+Una vez instalado tenemos que iniciar el servicio para configurar la seguridad.
+```bash
+service mariabd status
+service mariabd start
+mysql_secure_installation
 ```
 Tras configurar los valores nos aparece el mensaje: Thanks for using MariaDB!
-```bash
-sudo systemctl status mariadb
-```
-![mariaDB instalado](https://github.com/user-attachments/assets/848741f8-9a03-409e-890b-a9da5164556a)
 
+![mariadb_en_contenedor](https://github.com/user-attachments/assets/5771fcbb-a68d-48e3-b050-ad222e0d9e8b)
 
 
 #### Instalar PHP
 ```bash
-sudo apt install -y php php-mysql libapache2-mod-php
-sudo systemctl restart apache2
+apt install -y php php-mysql libapache2-mod-php
+systemctl restart apache2
 ```
 Comprobamos que php este instalado:
 ```bash
 php -v
 ```
-![phpinstalado](https://github.com/user-attachments/assets/626c2480-d61f-4f2b-8755-31e0e9289398)
+![php_en_contenedor](https://github.com/user-attachments/assets/e53c4583-d855-4b78-a11f-52798ff4677a)
+
 
 
 
