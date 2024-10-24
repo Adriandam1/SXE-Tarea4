@@ -23,8 +23,9 @@ docker images
 ![ubuntupull](https://github.com/user-attachments/assets/c37f6201-a958-4f0c-b847-e03b6c460b5c)
 
 ```bash
-docker container create -i -t --name cont_ubu1 ubuntu:22.04
+docker container create -i -t --name cont_ubu1 -p  8080:80 ubuntu:22.04
 ```
+
 ### Iniciar parar container: docker container start cont_ubu1
 
 
