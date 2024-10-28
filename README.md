@@ -134,7 +134,66 @@ apt-get install -y curl
 ```
 curl localhost/info.php #comprobamos que funciona el info.php
 
-4. Configure Apache for WordPress.
+4. Configuramos Apache para WordPress.
+
+Create Apache site for WordPress. Create
+
+verifico ruta
+```bash
+echo /etc/apache2/sites-available/wordpress.conf
+```
+
+cómo crear un archivo de configuración para un sitio de WordPress en un servidor Apache
+```bash
+cat <<EOF > /etc/apache2/sites-available/wordpress.conf
+<VirtualHost *:80>
+    DocumentRoot /srv/www/wordpress
+    <Directory /srv/www/wordpress>
+        Options FollowSymLinks
+        AllowOverride Limit Options FileInfo
+        DirectoryIndex index.php
+        Require all granted
+    </Directory>
+    <Directory /srv/www/wordpress/wp-content>
+        Options FollowSymLinks
+        Require all granted
+    </Directory>
+</VirtualHost>
+EOF
+```
+
+
+------------------------------------------------------------------
+Habilitar el sitio:
+```bash
+a2ensite wordpress
+```
+a2ensite: Es un script de utilidad que habilita sitios en Apache. Cambia la configuración para que Apache sirva el sitio especificado.
+wordpress: Es el nombre del archivo de configuración del sitio que has creado (en tu caso, /etc/apache2/sites-available/wordpress.conf). Este comando crea un enlace simbólico en /etc/apache2/sites-enabled/, activando así el sitio.
+
+
+ Habilitar la reescritura de URL:
+```bash
+a2enmod rewrite
+```
+a2enmod: Es un script de utilidad que habilita módulos en Apache.
+rewrite: Es el módulo que permite reescribir URLs, lo que es fundamental para WordPress. Permite crear URLs más limpias y amigables para SEO, y es necesario para que algunas funcionalidades de WordPress funcionen correctamente.
+
+
+
+Deshabilitar el sitio por defecto:
+```bash
+a2dissite 000-default
+```
+a2dissite: Es un script de utilidad que deshabilita sitios en Apache.
+000-default: Este es el sitio predeterminado que Apache crea al instalarlo. Generalmente muestra una página de "¡Funciona!" cuando se accede al servidor. Deshabilitarlo es útil cuando deseas que tu sitio (en este caso, WordPress) sea el único que se sirva.
+
+![configuracion](https://github.com/user-attachments/assets/c62c2ea2-05e5-4bcd-aa39-8ff6255b0188)
+
+Reinicio Apache
+```bash
+service apache2 status
+```
 
 
 ## 3. Comprueba que puedes acceder a wordpress. 
