@@ -211,18 +211,16 @@ mysql> quit
 Enable MySQL with service mysql start.
 
 ---------------------------------
-Ahora ya podemos a acceder a WordPress con nuestra direccion en mi caso: **http://10.0.9.154:8080/wp-admin/setup-config.php**
-
-![Screenshot_20241028_105945](https://github.com/user-attachments/assets/d5c16987-238a-4cd8-915d-fb29a076aa25)
-
 
 
 
 
 ## 3. Comprueba que puedes acceder a wordpress. 
-```bash
+Ahora ya podemos a acceder a WordPress con nuestra direccion en mi caso: **http://10.0.9.154:8080/wp-admin/setup-config.php**
 
-```
+![Screenshot_20241028_105945](https://github.com/user-attachments/assets/d5c16987-238a-4cd8-915d-fb29a076aa25)
+
+
 ## OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta guía. Comprueba que puedes acceder.
 ```bash
 
