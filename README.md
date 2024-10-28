@@ -213,8 +213,7 @@ Para configurar WordPress tenemos que crear la base de datos MySQL:
 ```bash
 mysql -u root
 mysql> CREATE DATABASE wordpress;
-mysql> CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
-mysql> CREATE USER wordpress@localhost IDENTIFIED BY 'admin';
+mysql> CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>'; // en mi caso la password es 'admin'
 mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;
 mysql> FLUSH PRIVILEGES;
 mysql> quit
