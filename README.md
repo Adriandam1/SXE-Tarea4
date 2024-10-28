@@ -63,7 +63,8 @@ Tras configurar los valores nos aparece el mensaje: Thanks for using MariaDB!
 
 ![mariadb_en_contenedor](https://github.com/user-attachments/assets/5771fcbb-a68d-48e3-b050-ad222e0d9e8b)
 
-
+<!-- -----------------------------------------------------
+Chuela crear base de datos
 
 #### Crear base de datos en contenedor mariadb(para luego)
 
@@ -79,7 +80,7 @@ create database mi_base_de_datos;
 show databases;
 
 ![mi_base_de_datos](https://github.com/user-attachments/assets/06ac3b96-195a-4b93-b6d5-991e0d4b1bb1)
-
+--------------------------------------------------------- -->
 
 
 #### Instalar PHP
@@ -170,16 +171,22 @@ Habilitar el sitio:
 ```bash
 a2ensite wordpress
 ```
-a2ensite: Es un script de utilidad que habilita sitios en Apache. Cambia la configuración para que Apache sirva el sitio especificado.
-wordpress: Es el nombre del archivo de configuración del sitio que has creado (en tu caso, /etc/apache2/sites-available/wordpress.conf). Este comando crea un enlace simbólico en /etc/apache2/sites-enabled/, activando así el sitio.
+Expliación del comando:
+
+**a2ensite**: Es un script de utilidad que habilita sitios en Apache. Cambia la configuración para que Apache sirva el sitio especificado.
+
+**wordpress**: Es el nombre del archivo de configuración del sitio que has creado (en tu caso, /etc/apache2/sites-available/wordpress.conf). Este comando crea un enlace simbólico en /etc/apache2/sites-enabled/, activando así el sitio.
 
 
  Habilitar la reescritura de URL:
 ```bash
 a2enmod rewrite
 ```
-a2enmod: Es un script de utilidad que habilita módulos en Apache.
-rewrite: Es el módulo que permite reescribir URLs, lo que es fundamental para WordPress. Permite crear URLs más limpias y amigables para SEO, y es necesario para que algunas funcionalidades de WordPress funcionen correctamente.
+Explicación del comando:
+
+**a2enmod**: Es un script de utilidad que habilita módulos en Apache.
+
+**rewrite**: Es el módulo que permite reescribir URLs, lo que es fundamental para WordPress. Permite crear URLs más limpias y amigables para SEO, y es necesario para que algunas funcionalidades de WordPress funcionen correctamente.
 
 
 
@@ -187,19 +194,23 @@ Deshabilitar el sitio por defecto:
 ```bash
 a2dissite 000-default
 ```
-a2dissite: Es un script de utilidad que deshabilita sitios en Apache.
-000-default: Este es el sitio predeterminado que Apache crea al instalarlo. Generalmente muestra una página de "¡Funciona!" cuando se accede al servidor. Deshabilitarlo es útil cuando deseas que tu sitio (en este caso, WordPress) sea el único que se sirva.
+Explicación del comando:
+
+**a2dissite**: Es un script de utilidad que deshabilita sitios en Apache.
+
+**000-default**: Este es el sitio predeterminado que Apache crea al instalarlo. Generalmente muestra una página de "¡Funciona!" cuando se accede al servidor. Deshabilitarlo es útil cuando deseas que tu sitio (en este caso, WordPress) sea el único que se sirva.
 
 ![configuracion](https://github.com/user-attachments/assets/c62c2ea2-05e5-4bcd-aa39-8ff6255b0188)
 
-Reinicio Apache
+Reiniciamos Apache:
 ```bash
 service apache2 restart
 ```
 
-Configure database
-To configure WordPress, we need to create MySQL database. Let’s do it!
-\h para help
+Para configurar WordPress tenemos que crear la base de datos MySQL: 
+
+(\h para menú de ayuda)
+```bash
 mysql -u root
 mysql> CREATE DATABASE wordpress;
 mysql> CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
@@ -207,7 +218,7 @@ mysql> CREATE USER wordpress@localhost IDENTIFIED BY 'admin';
 mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;
 mysql> FLUSH PRIVILEGES;
 mysql> quit
-
+```
 Enable MySQL with service mysql start.
 
 ---------------------------------
@@ -223,5 +234,5 @@ Ahora ya podemos a acceder a WordPress con nuestra direccion en mi caso: **http:
 
 ## OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta guía. Comprueba que puedes acceder.
 ```bash
-
+En este caso aún no me ha dado tiempo!
 ```
