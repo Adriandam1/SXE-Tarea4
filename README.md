@@ -268,9 +268,3 @@ contraseña: 9W7M*7i)s)x1d1sWd%
 ![WordPressFinal](https://github.com/user-attachments/assets/2c617599-df9c-4bc8-bbeb-5f9af9b0dab0)
 
 
-
-
-## OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta guía. Comprueba que puedes acceder.
-```bash
-En este caso aún no me ha dado tiempo!
-```
