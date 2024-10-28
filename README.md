@@ -231,6 +231,24 @@ Ahora ya podemos a acceder a WordPress con nuestra direccion en mi caso: **http:
 ![Screenshot_20241028_105945](https://github.com/user-attachments/assets/d5c16987-238a-4cd8-915d-fb29a076aa25)
 
 
+<!--  Comentarios prueba post arreglod Diego
+![arreglado_usuarios_wordpress](https://github.com/user-attachments/assets/6e1a3564-ce23-42bc-8137-7809407689b6)
+
+![WordPress3](https://github.com/user-attachments/assets/a9377597-3261-400a-9b3d-dda838227794)
+
+
+
+
+usuario: adrian
+contraseña: 9W7M*7i)s)x1d1sWd%
+
+ -->
+
+![WordPressFinal](https://github.com/user-attachments/assets/2c617599-df9c-4bc8-bbeb-5f9af9b0dab0)
+
+
+
+
 ## OPCIONAL: Instala phpmyadmin en el contenedor siguiendo esta guía. Comprueba que puedes acceder.
 ```bash
 En este caso aún no me ha dado tiempo!
