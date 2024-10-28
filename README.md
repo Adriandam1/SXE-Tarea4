@@ -55,8 +55,8 @@ apt install -y mariadb-server mariadb-client
 ```
 Una vez instalado tenemos que iniciar el servicio para configurar la seguridad.
 ```bash
-service mariabd status
-service mariabd start
+service mariadb status
+service mariadb start
 mysql_secure_installation
 ```
 Tras configurar los valores nos aparece el mensaje: Thanks for using MariaDB!
@@ -66,9 +66,13 @@ Tras configurar los valores nos aparece el mensaje: Thanks for using MariaDB!
 
 
 #### Crear base de datos en contenedor mariadb(para luego)
+
 service mariadb status
+
 service mariadb start
+
 accede a mariadb(pedira la password de root(en mi caso 'admin'))
+
 
 mysql -u root -p
 create database mi_base_de_datos;
@@ -162,8 +166,6 @@ cat <<EOF > /etc/apache2/sites-available/wordpress.conf
 EOF
 ```
 
-
-------------------------------------------------------------------
 Habilitar el sitio:
 ```bash
 a2ensite wordpress
@@ -192,8 +194,29 @@ a2dissite: Es un script de utilidad que deshabilita sitios en Apache.
 
 Reinicio Apache
 ```bash
-service apache2 status
+service apache2 restart
 ```
+
+Configure database
+To configure WordPress, we need to create MySQL database. Let’s do it!
+\h para help
+mysql -u root
+mysql> CREATE DATABASE wordpress;
+mysql> CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
+mysql> CREATE USER wordpress@localhost IDENTIFIED BY 'admin';
+mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;
+mysql> FLUSH PRIVILEGES;
+mysql> quit
+
+Enable MySQL with service mysql start.
+
+---------------------------------
+Ahora ya podemos a acceder a WordPress con nuestra direccion en mi caso: **http://10.0.9.154:8080/wp-admin/setup-config.php**
+
+![Screenshot_20241028_105945](https://github.com/user-attachments/assets/d5c16987-238a-4cd8-915d-fb29a076aa25)
+
+
+
 
 
 ## 3. Comprueba que puedes acceder a wordpress. 
